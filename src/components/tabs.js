@@ -18,7 +18,6 @@ const Tabs = (topics) => {
 
   const divTopics = document.createElement('div');
   divTopics.className = 'topics';
-  console.log(topics);
 
   topics.forEach(topic => {
     const divTab = document.createElement('div');
