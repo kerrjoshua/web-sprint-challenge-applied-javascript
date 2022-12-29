@@ -1,4 +1,4 @@
-const Card = (article) => {
+const Card = ({ headline, authorPhoto, authorName }) => {
   // TASK 5
   // ---------------------
   // Implement this function, which should return the markup you see below.
@@ -17,6 +17,32 @@ const Card = (article) => {
   //   </div>
   // </div>
   //
+  const card = document.createElement('div');
+  const divHeadline = document.createElement('div');
+  const author = document.createElement('div');
+  const imgContainer = document.createElement('div');
+  const imgAuthPhoto = document.createElement('img');
+  const byLine = document.createElement('span');
+
+  card.className = 'card';
+  divHeadline.className = 'headline';
+  author.className = 'author';
+  imgContainer.className = 'img-container';
+
+  divHeadline.textContent = headline;
+  imgAuthPhoto.src = authorPhoto;
+  byLine.textContent = `By ${authorName}`;
+
+  card.appendChild(divHeadline);
+  card.appendChild(author);
+  author.appendChild(imgContainer);
+  imgContainer.appendChild(imgAuthPhoto);
+  author.appendChild(byLine);
+
+  card.addEventListener('click', () => console.log(headline));
+
+  console.log(card);
+  return card;
 }
 
 const cardAppender = (selector) => {
