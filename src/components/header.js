@@ -36,6 +36,8 @@ const headerAppender = (selector) => {
   // It should create a header using the Header component above, passing arguments of your choosing.
   // It should append the header to the element in the DOM that matches the given selector.
   //
+  const container = document.querySelector(selector);
+  container.appendChild(Header('Hello World!', 'Today!', 'Perfect!'));
 
   // HINT: querySelector can take in a string (ie querySelector("#wrapper")) 
   // but it can also take in a variable (ie querySelector(selector))
